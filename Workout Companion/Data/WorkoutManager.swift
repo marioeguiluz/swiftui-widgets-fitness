@@ -23,7 +23,7 @@ class WorkoutManager: NSObject, ObservableObject {
         self.mapWorkout = mapWorkout
     }
 
-    func requestAuthorization() {
+    func requestAuthorization(onSuccess: @escaping () -> Void, onError: @escaping (Error?) -> Void) {
         if HKHealthStore.isHealthDataAvailable() {
             healthStore = HKHealthStore()
             let typesToRead: Set = [
@@ -35,16 +35,14 @@ class WorkoutManager: NSObject, ObservableObject {
             ]
             healthStore?.requestAuthorization(toShare: nil, read: typesToRead) { (result, error) in
                 if let error = error {
-                    //TODO: display error
-                    print(error)
+                    onError(error)
                     return
                 }
                 guard result else {
-                    // deal with the failed request
+                    onError(nil)
                     return
                 }
-                
-                self.loadWorkoutData()
+                onSuccess()
            }
         }
     }

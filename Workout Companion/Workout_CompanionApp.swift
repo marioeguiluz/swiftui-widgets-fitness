@@ -9,7 +9,11 @@ import SwiftUI
 
 @main
 struct Workout_CompanionApp: App {
-  private let workoutManager = WorkoutManager(weekWorkoutDays: WeekWorkoutDays(workouts: []))
+    
+    @State private var showingAlert = false
+    @State private var errorMesage = ""
+
+    private let workoutManager = WorkoutManager(weekWorkoutDays: WeekWorkoutDays(workouts: []))
 
     var body: some Scene {
         WindowGroup {
@@ -17,10 +21,19 @@ struct Workout_CompanionApp: App {
                 ContentView()
                     .frame(maxWidth: .infinity)
                     .environmentObject(workoutManager)
-
+            }
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Something went wrong..."), message: Text(errorMesage), dismissButton: .default(Text("Ok")))
             }
             .onAppear() {
-                workoutManager.requestAuthorization()
+                workoutManager.requestAuthorization {
+                    workoutManager.loadWorkoutData()
+                } onError: { error in
+                    if let error = error {
+                        errorMesage = error.localizedDescription
+                    }
+                    showingAlert = true
+                }
             }
         }
     }

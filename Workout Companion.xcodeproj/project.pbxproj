@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300B51042640AD22003AD7E8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B51032640AD22003AD7E8 /* WidgetKit.framework */; };
+		300B51062640AD22003AD7E8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 300B51052640AD22003AD7E8 /* SwiftUI.framework */; };
+		300B51092640AD22003AD7E8 /* WorkoutCompanionWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300B51082640AD22003AD7E8 /* WorkoutCompanionWidget.swift */; };
+		300B510C2640AD25003AD7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 300B510B2640AD25003AD7E8 /* Assets.xcassets */; };
+		300B510E2640AD25003AD7E8 /* WorkoutCompanionWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 300B510A2640AD23003AD7E8 /* WorkoutCompanionWidget.intentdefinition */; };
+		300B510F2640AD25003AD7E8 /* WorkoutCompanionWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 300B510A2640AD23003AD7E8 /* WorkoutCompanionWidget.intentdefinition */; };
+		300B51122640AD25003AD7E8 /* WorkoutCompanionWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 300B51022640AD22003AD7E8 /* WorkoutCompanionWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		300B51172640AF9E003AD7E8 /* WeekWorkoutsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C4EF726395A9F007F60CC /* WeekWorkoutsWidget.swift */; };
+		300B51182640AFB4003AD7E8 /* WeekWorkoutDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F93A263D74FE00405A24 /* WeekWorkoutDays.swift */; };
+		300B51192640AFB4003AD7E8 /* MapWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F93E263D79FF00405A24 /* MapWorkout.swift */; };
+		300B511A2640AFB4003AD7E8 /* WorkoutDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F938263D67BE00405A24 /* WorkoutDay.swift */; };
+		300B511B2640B01A003AD7E8 /* MKCoordinateRegion+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B7A1A263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift */; };
+		300B511C2640B01A003AD7E8 /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074ADB1263A0C6400DEB49A /* View+extensions.swift */; };
+		300B511D2640B01A003AD7E8 /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C4EFC26395AE9007F60CC /* Date+extensions.swift */; };
+		300B511E2640B27E003AD7E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30EBEB4826376F5500A4E9AB /* Assets.xcassets */; };
 		300C4EF826395A9F007F60CC /* WeekWorkoutsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C4EF726395A9F007F60CC /* WeekWorkoutsWidget.swift */; };
 		300C4EFD26395AE9007F60CC /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C4EFC26395AE9007F60CC /* Date+extensions.swift */; };
 		3023F939263D67BE00405A24 /* WorkoutDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F938263D67BE00405A24 /* WorkoutDay.swift */; };
@@ -25,7 +40,38 @@
 		30EBEB4C26376F5500A4E9AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30EBEB4B26376F5500A4E9AB /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		300B51102640AD25003AD7E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30EBEB3926376F5400A4E9AB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 300B51012640AD22003AD7E8;
+			remoteInfo = WorkoutCompanionWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		300B51132640AD25003AD7E8 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				300B51122640AD25003AD7E8 /* WorkoutCompanionWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		300B51022640AD22003AD7E8 /* WorkoutCompanionWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WorkoutCompanionWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		300B51032640AD22003AD7E8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		300B51052640AD22003AD7E8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		300B51082640AD22003AD7E8 /* WorkoutCompanionWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCompanionWidget.swift; sourceTree = "<group>"; };
+		300B510A2640AD23003AD7E8 /* WorkoutCompanionWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = WorkoutCompanionWidget.intentdefinition; sourceTree = "<group>"; };
+		300B510B2640AD25003AD7E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		300B510D2640AD25003AD7E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		300C4EF726395A9F007F60CC /* WeekWorkoutsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWorkoutsWidget.swift; sourceTree = "<group>"; };
 		300C4EFC26395AE9007F60CC /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
 		3023F938263D67BE00405A24 /* WorkoutDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDay.swift; sourceTree = "<group>"; };
@@ -48,6 +94,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		300B50FF2640AD22003AD7E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				300B51062640AD22003AD7E8 /* SwiftUI.framework in Frameworks */,
+				300B51042640AD22003AD7E8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30EBEB3E26376F5400A4E9AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,6 +114,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300B51072640AD22003AD7E8 /* WorkoutCompanionWidget */ = {
+			isa = PBXGroup;
+			children = (
+				300B51082640AD22003AD7E8 /* WorkoutCompanionWidget.swift */,
+				300B510A2640AD23003AD7E8 /* WorkoutCompanionWidget.intentdefinition */,
+				300B510B2640AD25003AD7E8 /* Assets.xcassets */,
+				300B510D2640AD25003AD7E8 /* Info.plist */,
+			);
+			path = WorkoutCompanionWidget;
+			sourceTree = "<group>";
+		};
 		300C4EFB26395AD8007F60CC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				307B7A18263AACB900A7F003 /* HealthKit.framework */,
+				300B51032640AD22003AD7E8 /* WidgetKit.framework */,
+				300B51052640AD22003AD7E8 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				30EBEB4326376F5400A4E9AB /* Workout Companion */,
+				300B51072640AD22003AD7E8 /* WorkoutCompanionWidget */,
 				30EBEB4226376F5400A4E9AB /* Products */,
 				307B7A17263AACB900A7F003 /* Frameworks */,
 			);
@@ -120,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				30EBEB4126376F5400A4E9AB /* Workout Companion.app */,
+				300B51022640AD22003AD7E8 /* WorkoutCompanionWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +221,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		300B51012640AD22003AD7E8 /* WorkoutCompanionWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 300B51162640AD25003AD7E8 /* Build configuration list for PBXNativeTarget "WorkoutCompanionWidgetExtension" */;
+			buildPhases = (
+				300B50FE2640AD22003AD7E8 /* Sources */,
+				300B50FF2640AD22003AD7E8 /* Frameworks */,
+				300B51002640AD22003AD7E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WorkoutCompanionWidgetExtension;
+			productName = WorkoutCompanionWidgetExtension;
+			productReference = 300B51022640AD22003AD7E8 /* WorkoutCompanionWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		30EBEB4026376F5400A4E9AB /* Workout Companion */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 30EBEB5026376F5500A4E9AB /* Build configuration list for PBXNativeTarget "Workout Companion" */;
@@ -158,10 +245,12 @@
 				30EBEB3D26376F5400A4E9AB /* Sources */,
 				30EBEB3E26376F5400A4E9AB /* Frameworks */,
 				30EBEB3F26376F5400A4E9AB /* Resources */,
+				300B51132640AD25003AD7E8 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				300B51112640AD25003AD7E8 /* PBXTargetDependency */,
 			);
 			name = "Workout Companion";
 			productName = "Workout Companion";
@@ -174,9 +263,12 @@
 		30EBEB3926376F5400A4E9AB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					300B51012640AD22003AD7E8 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					30EBEB4026376F5400A4E9AB = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -196,11 +288,21 @@
 			projectRoot = "";
 			targets = (
 				30EBEB4026376F5400A4E9AB /* Workout Companion */,
+				300B51012640AD22003AD7E8 /* WorkoutCompanionWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		300B51002640AD22003AD7E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				300B511E2640B27E003AD7E8 /* Assets.xcassets in Resources */,
+				300B510C2640AD25003AD7E8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30EBEB3F26376F5400A4E9AB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,6 +315,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		300B50FE2640AD22003AD7E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				300B51182640AFB4003AD7E8 /* WeekWorkoutDays.swift in Sources */,
+				300B511B2640B01A003AD7E8 /* MKCoordinateRegion+extensions.swift in Sources */,
+				300B51092640AD22003AD7E8 /* WorkoutCompanionWidget.swift in Sources */,
+				300B511D2640B01A003AD7E8 /* Date+extensions.swift in Sources */,
+				300B511A2640AFB4003AD7E8 /* WorkoutDay.swift in Sources */,
+				300B510E2640AD25003AD7E8 /* WorkoutCompanionWidget.intentdefinition in Sources */,
+				300B51192640AFB4003AD7E8 /* MapWorkout.swift in Sources */,
+				300B511C2640B01A003AD7E8 /* View+extensions.swift in Sources */,
+				300B51172640AF9E003AD7E8 /* WeekWorkoutsWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30EBEB3D26376F5400A4E9AB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,12 +348,69 @@
 				3086E433263DDB8B00843006 /* WorkoutWidgets.swift in Sources */,
 				3074ADB2263A0C6400DEB49A /* View+extensions.swift in Sources */,
 				304917FD26387F7600AB1C1B /* WorkoutManager.swift in Sources */,
+				300B510F2640AD25003AD7E8 /* WorkoutCompanionWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		300B51112640AD25003AD7E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 300B51012640AD22003AD7E8 /* WorkoutCompanionWidgetExtension */;
+			targetProxy = 300B51102640AD25003AD7E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		300B51142640AD25003AD7E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WZFDA97N8;
+				INFOPLIST_FILE = WorkoutCompanionWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "MEZ.Workout-Companion.WorkoutCompanionWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		300B51152640AD25003AD7E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4WZFDA97N8;
+				INFOPLIST_FILE = WorkoutCompanionWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "MEZ.Workout-Companion.WorkoutCompanionWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		30EBEB4E26376F5500A4E9AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -355,6 +530,7 @@
 		30EBEB5126376F5500A4E9AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Workout Companion/Workout Companion.entitlements";
@@ -373,13 +549,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		30EBEB5226376F5500A4E9AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Workout Companion/Workout Companion.entitlements";
@@ -398,13 +575,22 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		300B51162640AD25003AD7E8 /* Build configuration list for PBXNativeTarget "WorkoutCompanionWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				300B51142640AD25003AD7E8 /* Debug */,
+				300B51152640AD25003AD7E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		30EBEB3C26376F5400A4E9AB /* Build configuration list for PBXProject "Workout Companion" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

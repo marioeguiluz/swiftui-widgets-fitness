@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct Workout_CompanionApp: App {
+  private let workoutManager = WorkoutManager(weekWorkoutDays: WeekWorkoutDays(workouts: []))
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+                    .frame(maxWidth: .infinity)
+                    .environmentObject(workoutManager)
+
+            }
+            .onAppear() {
+                workoutManager.requestAuthorization()
+            }
         }
     }
 }

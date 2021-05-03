@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300C4EF826395A9F007F60CC /* WeekWorkoutsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C4EF726395A9F007F60CC /* WeekWorkoutsWidget.swift */; };
+		300C4EFD26395AE9007F60CC /* Date+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C4EFC26395AE9007F60CC /* Date+extensions.swift */; };
+		3023F939263D67BE00405A24 /* WorkoutDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F938263D67BE00405A24 /* WorkoutDay.swift */; };
+		3023F93B263D74FE00405A24 /* WeekWorkoutDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F93A263D74FE00405A24 /* WeekWorkoutDays.swift */; };
+		3023F93F263D79FF00405A24 /* MapWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F93E263D79FF00405A24 /* MapWorkout.swift */; };
+		3024CDB7263DAF5E004B8648 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307B7A18263AACB900A7F003 /* HealthKit.framework */; };
+		304917FD26387F7600AB1C1B /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304917FC26387F7600AB1C1B /* WorkoutManager.swift */; };
+		3074ADB2263A0C6400DEB49A /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074ADB1263A0C6400DEB49A /* View+extensions.swift */; };
+		307B7A15263AA3D300A7F003 /* MapWorkoutWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B7A14263AA3D300A7F003 /* MapWorkoutWidget.swift */; };
+		307B7A1B263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B7A1A263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift */; };
+		3086E433263DDB8B00843006 /* WorkoutWidgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086E432263DDB8B00843006 /* WorkoutWidgets.swift */; };
+		3086E435263DDE8600843006 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3086E434263DDE8600843006 /* Menu.swift */; };
 		30EBEB4526376F5400A4E9AB /* Workout_CompanionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBEB4426376F5400A4E9AB /* Workout_CompanionApp.swift */; };
 		30EBEB4726376F5400A4E9AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30EBEB4626376F5400A4E9AB /* ContentView.swift */; };
 		30EBEB4926376F5500A4E9AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30EBEB4826376F5500A4E9AB /* Assets.xcassets */; };
@@ -14,6 +26,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		300C4EF726395A9F007F60CC /* WeekWorkoutsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWorkoutsWidget.swift; sourceTree = "<group>"; };
+		300C4EFC26395AE9007F60CC /* Date+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extensions.swift"; sourceTree = "<group>"; };
+		3023F938263D67BE00405A24 /* WorkoutDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDay.swift; sourceTree = "<group>"; };
+		3023F93A263D74FE00405A24 /* WeekWorkoutDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekWorkoutDays.swift; sourceTree = "<group>"; };
+		3023F93E263D79FF00405A24 /* MapWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorkout.swift; sourceTree = "<group>"; };
+		304917FC26387F7600AB1C1B /* WorkoutManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutManager.swift; sourceTree = "<group>"; };
+		3074ADB1263A0C6400DEB49A /* View+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+extensions.swift"; sourceTree = "<group>"; };
+		307B7A14263AA3D300A7F003 /* MapWorkoutWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapWorkoutWidget.swift; sourceTree = "<group>"; };
+		307B7A16263AACB900A7F003 /* Workout Companion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Workout Companion.entitlements"; sourceTree = "<group>"; };
+		307B7A18263AACB900A7F003 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		307B7A1A263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKCoordinateRegion+extensions.swift"; sourceTree = "<group>"; };
+		3086E432263DDB8B00843006 /* WorkoutWidgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutWidgets.swift; sourceTree = "<group>"; };
+		3086E434263DDE8600843006 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		30EBEB4126376F5400A4E9AB /* Workout Companion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Workout Companion.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30EBEB4426376F5400A4E9AB /* Workout_CompanionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout_CompanionApp.swift; sourceTree = "<group>"; };
 		30EBEB4626376F5400A4E9AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,17 +52,67 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3024CDB7263DAF5E004B8648 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300C4EFB26395AD8007F60CC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				300C4EFC26395AE9007F60CC /* Date+extensions.swift */,
+				3074ADB1263A0C6400DEB49A /* View+extensions.swift */,
+				307B7A1A263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3023F937263D679D00405A24 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3023F938263D67BE00405A24 /* WorkoutDay.swift */,
+				3023F93A263D74FE00405A24 /* WeekWorkoutDays.swift */,
+				3023F93E263D79FF00405A24 /* MapWorkout.swift */,
+				3086E434263DDE8600843006 /* Menu.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3023F93C263D799100405A24 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				30EBEB4626376F5400A4E9AB /* ContentView.swift */,
+				3086E432263DDB8B00843006 /* WorkoutWidgets.swift */,
+				300C4EF726395A9F007F60CC /* WeekWorkoutsWidget.swift */,
+				307B7A14263AA3D300A7F003 /* MapWorkoutWidget.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3023F93D263D79A600405A24 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				304917FC26387F7600AB1C1B /* WorkoutManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		307B7A17263AACB900A7F003 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				307B7A18263AACB900A7F003 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		30EBEB3826376F5400A4E9AB = {
 			isa = PBXGroup;
 			children = (
 				30EBEB4326376F5400A4E9AB /* Workout Companion */,
 				30EBEB4226376F5400A4E9AB /* Products */,
+				307B7A17263AACB900A7F003 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,8 +127,12 @@
 		30EBEB4326376F5400A4E9AB /* Workout Companion */ = {
 			isa = PBXGroup;
 			children = (
+				300C4EFB26395AD8007F60CC /* Extensions */,
 				30EBEB4426376F5400A4E9AB /* Workout_CompanionApp.swift */,
-				30EBEB4626376F5400A4E9AB /* ContentView.swift */,
+				3023F93D263D79A600405A24 /* Data */,
+				3023F93C263D799100405A24 /* Views */,
+				3023F937263D679D00405A24 /* Models */,
+				307B7A16263AACB900A7F003 /* Workout Companion.entitlements */,
 				30EBEB4826376F5500A4E9AB /* Assets.xcassets */,
 				30EBEB4D26376F5500A4E9AB /* Info.plist */,
 				30EBEB4A26376F5500A4E9AB /* Preview Content */,
@@ -138,8 +217,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				300C4EFD26395AE9007F60CC /* Date+extensions.swift in Sources */,
+				3023F93B263D74FE00405A24 /* WeekWorkoutDays.swift in Sources */,
 				30EBEB4726376F5400A4E9AB /* ContentView.swift in Sources */,
+				3023F939263D67BE00405A24 /* WorkoutDay.swift in Sources */,
+				307B7A15263AA3D300A7F003 /* MapWorkoutWidget.swift in Sources */,
+				300C4EF826395A9F007F60CC /* WeekWorkoutsWidget.swift in Sources */,
 				30EBEB4526376F5400A4E9AB /* Workout_CompanionApp.swift in Sources */,
+				307B7A1B263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift in Sources */,
+				3023F93F263D79FF00405A24 /* MapWorkout.swift in Sources */,
+				3086E435263DDE8600843006 /* Menu.swift in Sources */,
+				3086E433263DDB8B00843006 /* WorkoutWidgets.swift in Sources */,
+				3074ADB2263A0C6400DEB49A /* View+extensions.swift in Sources */,
+				304917FD26387F7600AB1C1B /* WorkoutManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +357,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Workout Companion/Workout Companion.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Workout Companion/Preview Content\"";
 				DEVELOPMENT_TEAM = 4WZFDA97N8;
@@ -279,6 +371,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "MEZ.Workout-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -289,6 +382,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Workout Companion/Workout Companion.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Workout Companion/Preview Content\"";
 				DEVELOPMENT_TEAM = 4WZFDA97N8;
@@ -301,6 +396,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "MEZ.Workout-Companion";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

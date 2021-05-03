@@ -12,7 +12,7 @@ struct WeekWorkoutsWidget: View {
     let weekWorkoutDays: WeekWorkoutDays
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .leading, spacing: 8) {
             TitleWorkouts()
             Subtitle(weekWorkoutDays: weekWorkoutDays)
             Divider()

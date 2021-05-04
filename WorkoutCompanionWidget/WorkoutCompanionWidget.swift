@@ -10,6 +10,8 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
+    let workoutManager = WorkoutManager(weekWorkoutDays: WeekWorkoutDays(workouts: []))
+
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent(), weekWorkoutDays: WeekWorkoutDays.data)
     }
@@ -20,18 +22,13 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate, configuration: configuration, weekWorkoutDays: WeekWorkoutDays.data)
-            entries.append(entry)
+        workoutManager.fetchWorkoutWeek { weekWorkoutDays in
+            let entryDate = Date()
+            let refreshDate = Calendar.current.date(byAdding: .day, value: 1, to: entryDate)!
+            let entry = SimpleEntry(date: entryDate, configuration: configuration, weekWorkoutDays: weekWorkoutDays)
+            let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
+            completion(timeline)
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 }
 

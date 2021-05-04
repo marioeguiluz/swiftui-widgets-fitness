@@ -29,6 +29,7 @@
 		3023F93F263D79FF00405A24 /* MapWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3023F93E263D79FF00405A24 /* MapWorkout.swift */; };
 		3024CDB7263DAF5E004B8648 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307B7A18263AACB900A7F003 /* HealthKit.framework */; };
 		304917FD26387F7600AB1C1B /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304917FC26387F7600AB1C1B /* WorkoutManager.swift */; };
+		304A9CD22640B6CE00E883F8 /* WorkoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304917FC26387F7600AB1C1B /* WorkoutManager.swift */; };
 		3074ADB2263A0C6400DEB49A /* View+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3074ADB1263A0C6400DEB49A /* View+extensions.swift */; };
 		307B7A15263AA3D300A7F003 /* MapWorkoutWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B7A14263AA3D300A7F003 /* MapWorkoutWidget.swift */; };
 		307B7A1B263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307B7A1A263AB7E300A7F003 /* MKCoordinateRegion+extensions.swift */; };
@@ -326,6 +327,7 @@
 				300B511A2640AFB4003AD7E8 /* WorkoutDay.swift in Sources */,
 				300B510E2640AD25003AD7E8 /* WorkoutCompanionWidget.intentdefinition in Sources */,
 				300B51192640AFB4003AD7E8 /* MapWorkout.swift in Sources */,
+				304A9CD22640B6CE00E883F8 /* WorkoutManager.swift in Sources */,
 				300B511C2640B01A003AD7E8 /* View+extensions.swift in Sources */,
 				300B51172640AF9E003AD7E8 /* WeekWorkoutsWidget.swift in Sources */,
 			);

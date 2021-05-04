@@ -22,7 +22,7 @@ struct Provider: IntentTimelineProvider {
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        workoutManager.fetchWorkoutWeek { weekWorkoutDays in
+        workoutManager.latestWorkoutWeekDays { weekWorkoutDays in
             let entryDate = Date()
             let refreshDate = Calendar.current.date(byAdding: .day, value: 1, to: entryDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration, weekWorkoutDays: weekWorkoutDays)
@@ -63,6 +63,6 @@ struct WorkoutCompanionWidget: Widget {
 struct WorkoutCompanionWidget_Previews: PreviewProvider {
     static var previews: some View {
         WorkoutCompanionWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), weekWorkoutDays: WeekWorkoutDays.data))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

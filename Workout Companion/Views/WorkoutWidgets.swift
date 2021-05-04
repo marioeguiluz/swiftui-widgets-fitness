@@ -22,7 +22,8 @@ struct WorkoutWidgets: View {
         }
         .navigationTitle("Workout")
         .onAppear() {
-            workoutManager.loadWorkoutData()
+            workoutManager.latestWorkoutWeekDays()
+            workoutManager.latestMapWorkout()
         }
 
     }

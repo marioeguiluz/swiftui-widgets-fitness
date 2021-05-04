@@ -27,7 +27,8 @@ struct Workout_CompanionApp: App {
             }
             .onAppear() {
                 workoutManager.requestAuthorization {
-                    workoutManager.loadWorkoutData()
+                    workoutManager.latestWorkoutWeekDays()
+                    workoutManager.latestMapWorkout()
                 } onError: { error in
                     if let error = error {
                         errorMesage = error.localizedDescription

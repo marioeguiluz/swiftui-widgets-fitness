@@ -200,9 +200,9 @@
 			children = (
 				300C4EFB26395AD8007F60CC /* Extensions */,
 				30EBEB4426376F5400A4E9AB /* Workout_CompanionApp.swift */,
+				3023F937263D679D00405A24 /* Models */,
 				3023F93D263D79A600405A24 /* Data */,
 				3023F93C263D799100405A24 /* Views */,
-				3023F937263D679D00405A24 /* Models */,
 				307B7A16263AACB900A7F003 /* Workout Companion.entitlements */,
 				30EBEB4826376F5500A4E9AB /* Assets.xcassets */,
 				30EBEB4D26376F5500A4E9AB /* Info.plist */,

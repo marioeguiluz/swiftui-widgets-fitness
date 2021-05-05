@@ -13,7 +13,7 @@ struct Workout_CompanionApp: App {
     @State private var showingAlert = false
     @State private var errorMesage = ""
 
-    private let workoutManager = WorkoutManager(weekWorkoutDays: WeekWorkoutDays(workouts: []))
+    @StateObject var workoutManager = WorkoutManager(weekWorkoutDays: WeekWorkoutDays(workouts: []))
 
     var body: some Scene {
         WindowGroup {

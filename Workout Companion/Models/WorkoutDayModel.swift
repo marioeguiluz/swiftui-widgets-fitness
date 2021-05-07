@@ -8,7 +8,7 @@
 import Foundation
 import HealthKit
 
-struct WorkoutDay: Identifiable {
+struct WorkoutDayModel: Identifiable {
     let id: UUID
     let date: Date
     let workouts: [HKWorkout]

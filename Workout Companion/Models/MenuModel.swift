@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Menu: CaseIterable, Identifiable {
+enum MenuModel: CaseIterable, Identifiable {
     case workout
     case activeEnergy
     case heartRate
@@ -62,14 +62,14 @@ enum Menu: CaseIterable, Identifiable {
     }
 }
 
-extension Menu {
+extension MenuModel {
     static var data = {
         return [
-            Menu.workout,
-            Menu.activeEnergy,
-            Menu.heartRate,
-            Menu.steps,
-            Menu.sleep
+            MenuModel.workout,
+            MenuModel.activeEnergy,
+            MenuModel.heartRate,
+            MenuModel.steps,
+            MenuModel.sleep
         ]
     }
 }

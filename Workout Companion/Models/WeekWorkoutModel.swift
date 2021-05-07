@@ -7,23 +7,40 @@
 
 import HealthKit
 
-struct WeekWorkoutDays {
-    let workoutDays: [WorkoutDay]
+struct WeekWorkoutModel {
+    let workoutDays: [WorkoutDayModel]
+    
+    var summary: String {
+        return "You worked out on \(countWeekWorkoutDays(workoutDays)) of the last 7 days."
+    }
 
     init(workouts: [HKWorkout]) {
         let today = Date()
-        var workoutDays: [WorkoutDay] = []
+        var workoutDays: [WorkoutDayModel] = []
         [0,1,2,3,4,5,6].forEach { e in
             let date = Calendar.current.date(byAdding: .day, value: -e, to: today)!
             let dateWorkouts = workouts.filter { Calendar.current.isDate($0.startDate, equalTo: date, toGranularity: .day) }
-            workoutDays.append(WorkoutDay(date: date, workouts: dateWorkouts))
+            workoutDays.append(WorkoutDayModel(date: date, workouts: dateWorkouts))
         }
         self.workoutDays = workoutDays.reversed()
     }
+    
+    private func countWeekWorkoutDays(_ workouts: [WorkoutDayModel]) -> Int {
+        let myCalendar = Calendar(identifier: .gregorian)
+        var days = [false, false, false, false, false, false, false]
+        workouts.forEach { (e) in
+            if e.workouts.count > 0 {
+                let weekDay = myCalendar.component(.weekday, from: e.workouts[0].startDate) - 1
+                days[weekDay] = true
+            }
+        }
+        let trainingDays = days.filter{$0}
+        return trainingDays.count
+    }
 }
 
-extension WeekWorkoutDays {
-    static var data = WeekWorkoutDays(workouts: [
+extension WeekWorkoutModel {
+    static var data = WeekWorkoutModel(workouts: [
         generateWorkout(daysAgo: 6),
         generateWorkout(daysAgo: 6),
         generateWorkout(daysAgo: 4),

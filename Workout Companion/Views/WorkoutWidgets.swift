@@ -14,26 +14,28 @@ struct WorkoutWidgets: View {
     var body: some View {
         ScrollView {
             VStack {
-                WeekWorkoutsWidget(weekWorkoutDays: workoutManager.weekWorkoutDays)
-                MapWorkoutWidget(mapWorkout: workoutManager.mapWorkout)
+                WeekWorkoutsWidget(weekWorkoutModel: workoutManager.weekWorkoutModel)
+                MapWorkoutWidget(mapWorkoutModel: workoutManager.mapWorkoutModel)
+                RecentWorkoutsWidgets(workouts: workoutManager.recentWorkouts)
             }
-            .frame(maxWidth: .infinity)
             .padding()
         }
-        .navigationTitle("Workout")
+        .navigationTitle("Workout Widgets")
         .onAppear() {
-            workoutManager.latestWorkoutWeekDays()
-            workoutManager.latestMapWorkout()
+            workoutManager.loadWorkoutData()
         }
-
     }
 }
 
 
 struct WorkoutWidgets_Previews: PreviewProvider {
     static var previews: some View {
-        WorkoutWidgets().previewDevice("iPhone 12 Pro").environmentObject(WorkoutManager(weekWorkoutDays: WeekWorkoutDays.data ))
+        WorkoutWidgets().previewDevice("iPhone 12 Pro").environmentObject(
+            WorkoutManager(
+                weekWorkoutModel: WeekWorkoutModel.data,
+                mapWorkoutModel: nil,
+                recentWorkouts: HKWorkout.data
+            )
+        )
     }
 }
-
-

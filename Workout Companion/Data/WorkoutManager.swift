@@ -13,14 +13,20 @@ import MapKit
 
 class WorkoutManager: NSObject, ObservableObject {
 
-    @Published var weekWorkoutDays = WeekWorkoutDays(workouts: [])
-    @Published var mapWorkout: MapWorkout? = nil
+    @Published var weekWorkoutModel = WeekWorkoutModel(workouts: [])
+    @Published var mapWorkoutModel: MapWorkoutModel? = nil
+    @Published var recentWorkouts: [HKWorkout] = []
 
     private var healthStore: HKHealthStore?
 
-    init(weekWorkoutDays: WeekWorkoutDays, mapWorkout: MapWorkout? = nil) {
-        self.weekWorkoutDays = weekWorkoutDays
-        self.mapWorkout = mapWorkout
+    init(
+        weekWorkoutModel: WeekWorkoutModel = WeekWorkoutModel(workouts: []),
+        mapWorkoutModel: MapWorkoutModel? = nil,
+        recentWorkouts: [HKWorkout] = []) {
+        
+        self.weekWorkoutModel = weekWorkoutModel
+        self.mapWorkoutModel = mapWorkoutModel
+        self.recentWorkouts = recentWorkouts
 
         if HKHealthStore.isHealthDataAvailable() {
             healthStore = HKHealthStore()
@@ -49,10 +55,16 @@ class WorkoutManager: NSObject, ObservableObject {
            }
         }
     }
+    
+    func loadWorkoutData() {
+        latestMapWorkout()
+        latestWorkoutWeekDays()
+        latestWorkouts()
+    }
 
     // LAST WEEK WORKOUTS
 
-    func latestWorkoutWeekDays(completion: ((WeekWorkoutDays) -> Void)? = nil) {
+    func latestWorkoutWeekDays(completion: ((WeekWorkoutModel) -> Void)? = nil) {
         let end = Date()
         let start = Calendar.current.date(byAdding: .day, value: -7, to: end)!
         let workoutPredicate = HKQuery.predicateForWorkouts(with: .greaterThanOrEqualTo, duration: 1)
@@ -67,13 +79,13 @@ class WorkoutManager: NSObject, ObservableObject {
             sortDescriptors: [sortDescriptor]) { (query, samples, error) in
             DispatchQueue.main.async {
                 guard let samples = samples as? [HKWorkout], error == nil else {
-                    let result = WeekWorkoutDays(workouts: [])
-                    self.weekWorkoutDays = result
+                    let result = WeekWorkoutModel(workouts: [])
+                    self.weekWorkoutModel = result
                     completion?(result)
                     return
                 }
-                let result =  WeekWorkoutDays(workouts: samples)
-                self.weekWorkoutDays = result
+                let result =  WeekWorkoutModel(workouts: samples)
+                self.weekWorkoutModel = result
                 completion?(result)
             }
           }
@@ -89,7 +101,7 @@ class WorkoutManager: NSObject, ObservableObject {
         let query = HKSampleQuery(sampleType: .workoutType(), predicate: walkingPredicate, limit: 5, sortDescriptors: [sortDescriptor]) { (query, samples, error) in
             DispatchQueue.main.async {
                 guard let samples = samples as? [HKWorkout], error == nil, let mapWorkout = samples.first else {
-                    self.mapWorkout = nil
+                    self.mapWorkoutModel = nil
                     return
                 }
                 self.publishMapWorkout(workout: mapWorkout)
@@ -113,7 +125,7 @@ class WorkoutManager: NSObject, ObservableObject {
                             let coordinates2D = accumulator.map { $0.coordinate }
                             let region = MKCoordinateRegion(coordinates: coordinates2D)
                             DispatchQueue.main.async {
-                                self.mapWorkout = MapWorkout(workout: workout, region: region, coordinates: coordinates2D)
+                                self.mapWorkoutModel = MapWorkoutModel(workout: workout, region: region, coordinates: coordinates2D)
                             }
                         }
                     }
@@ -122,5 +134,34 @@ class WorkoutManager: NSObject, ObservableObject {
             }
         }
         healthStore?.execute(workoutRoutesQuery)
+    }
+    
+    // RECENT WORKOUTS
+    
+    func latestWorkouts(completion: (([HKWorkout]) -> Void)? = nil) {
+        let end = Date()
+        let start = Calendar.current.date(byAdding: .day, value: -7, to: end)!
+        let workoutPredicate = HKQuery.predicateForWorkouts(with: .greaterThanOrEqualTo, duration: 1)
+        let datePredicate = HKQuery.predicateForSamples(withStart: start, end: end, options: [])
+        let compound = NSCompoundPredicate(andPredicateWithSubpredicates:[workoutPredicate, datePredicate])
+        let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+
+        let query = HKSampleQuery(
+            sampleType: .workoutType(),
+            predicate: compound,
+            limit: 0,
+            sortDescriptors: [sortDescriptor]) { (query, samples, error) in
+            DispatchQueue.main.async {
+                guard let samples = samples as? [HKWorkout], error == nil else {
+                    self.recentWorkouts = []
+                    completion?([])
+                    return
+                }
+                self.recentWorkouts = samples
+                completion?(samples)
+            }
+          }
+
+        healthStore?.execute(query)
     }
 }

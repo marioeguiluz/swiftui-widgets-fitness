@@ -8,20 +8,16 @@
 import HealthKit
 import MapKit
 
-struct MapWorkout {
+struct MapWorkoutModel {
     let workout: HKWorkout
     let region: MKCoordinateRegion?
     let coordinates: [CLLocationCoordinate2D]?
 
+    var summary: String {
+        return "Your last walk was \(String(format:"%0.2f km", distance)) long with an average pace of \(pace) per km"
+    }
     var distance: Double {
         return workout.totalDistance != nil ? workout.totalDistance!.doubleValue(for: HKUnit.meter())/1000 : 0
-    }
-
-    var duration: String {
-        let durationDecimal = workout.duration / 60
-        let mins = Int(floor(durationDecimal))
-        let secs = Int(floor(durationDecimal * 60).truncatingRemainder(dividingBy: 60))
-        return String(format:"%d min %02d secs", mins, secs)
     }
 
     var durationHours: Int {

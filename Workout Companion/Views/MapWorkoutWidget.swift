@@ -10,37 +10,29 @@ import HealthKit
 import MapKit
 
 struct MapWorkoutWidget: View {
-    var mapWorkout: MapWorkout?
+    var mapWorkoutModel: MapWorkoutModel?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
             TitleWorkouts()
-            if let mapWorkout = mapWorkout {
-                SubtitleMapWorkout(workout: mapWorkout)
+            if let mapWorkoutModel = mapWorkoutModel {
+                Text(mapWorkoutModel.summary)
+                    .font(Font.body.bold())
+                    .foregroundColor(Color.white)
                 Divider()
                     .background(Color(UIColor.systemGray2))
-                if let region = mapWorkout.region, let coordinates = mapWorkout.coordinates {
+                if let region = mapWorkoutModel.region, let coordinates = mapWorkoutModel.coordinates {
                     MapView(coordinates: coordinates, region: region)
                         .frame(maxWidth: .infinity, idealHeight: 200)
-                    MapViewFooter(mapWorkout: mapWorkout)
                 }
+                MapViewFooter(mapWorkoutModel: mapWorkoutModel)
             } else {
                 Text("Waiting for a walking workout...")
+                    .foregroundColor(Color.white)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
-        .padding()
-        .background(Color("Card"))
-        .cornerRadius(15)
-    }
-}
-
-struct SubtitleMapWorkout: View {
-    let workout: MapWorkout
-
-    var body: some View {
-        Text("Your last walk was \(String(format:"%0.2f km", workout.distance)) long with an average pace of \(workout.pace) per km")
-            .font(Font.body.bold())
-            .foregroundColor(Color.white)
+        .cardStyle()
     }
 }
 
@@ -87,41 +79,41 @@ struct MapView: UIViewRepresentable {
 }
 
 struct MapViewFooter: View {
-    let mapWorkout: MapWorkout
+    let mapWorkoutModel: MapWorkoutModel
 
     var body: some View {
         HStack(spacing: 15) {
             VStack(alignment: .leading, spacing: 5) {
                 Text("Distance")
-                    .font(.subheadline).bold().foregroundColor(Color(UIColor.systemGray))
-                Text(String(format:"%0.2f", mapWorkout.distance))
-                    .font(.title).bold().foregroundColor(.white)
+                    .workoutSubheadlineStyle()
+                Text(String(format:"%0.2f", mapWorkoutModel.distance))
+                    .workoutTitleStyle()
                 + Text(" km")
-                    .font(.subheadline).bold().foregroundColor(Color(UIColor.systemGray))
+                    .workoutSubheadlineStyle()
             }
             Divider()
                 .background(Color(UIColor.systemGray2))
             VStack(alignment: .leading, spacing: 5) {
                 Text("Duration")
-                    .font(.subheadline).bold().foregroundColor(Color(UIColor.systemGray))
-                Text("\(mapWorkout.durationHours)")
-                    .font(.title).bold().foregroundColor(.white)
+                    .workoutSubheadlineStyle()
+                Text("\(mapWorkoutModel.durationHours)")
+                    .workoutTitleStyle()
                 + Text(" hr ")
-                    .font(.subheadline).bold().foregroundColor(Color(UIColor.systemGray))
-                + Text("\(mapWorkout.durationMinutes)")
-                    .font(.title).bold().foregroundColor(.white)
+                    .workoutSubheadlineStyle()
+                + Text("\(mapWorkoutModel.durationMinutes)")
+                    .workoutTitleStyle()
                 + Text(" min")
-                    .font(.subheadline).bold().foregroundColor(Color(UIColor.systemGray))
+                    .workoutSubheadlineStyle()
             }
             Divider()
                 .background(Color(UIColor.systemGray2))
             VStack(alignment: .leading, spacing: 5) {
                 Text("Energy")
-                    .font(.subheadline).bold().foregroundColor(Color(UIColor.systemGray))
-                Text(String(format:"%.0f", mapWorkout.kcal))
-                    .font(.title).bold().foregroundColor(.white)
+                    .workoutSubheadlineStyle()
+                Text(String(format:"%.0f", mapWorkoutModel.kcal))
+                    .workoutTitleStyle()
                     + Text(" kcal")
-                        .font(.subheadline).bold().foregroundColor(Color(UIColor.systemGray))
+                        .workoutSubheadlineStyle()
             }
         }
         .frame(maxHeight: 50)

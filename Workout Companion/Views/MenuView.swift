@@ -8,11 +8,10 @@
 import SwiftUI
 import HealthKit
 
-struct ContentView: View {
-
+struct MenuView: View {
     var body: some View {
         List {
-            ForEach(Menu.allCases) { item in
+            ForEach(MenuModel.allCases) { item in
                 NavigationLink(destination: destination(for: item)) {
                     Label(item.title(), systemImage: item.imageSystemNames())
                         .foregroundColor(item.color())
@@ -24,7 +23,7 @@ struct ContentView: View {
         .navigationTitle("Widgets")
     }
 
-    private func destination(for menuItem: Menu) -> some View {
+    private func destination(for menuItem: MenuModel) -> some View {
         switch menuItem {
         case .workout:
             return WorkoutWidgets()
@@ -34,8 +33,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().previewDevice("iPhone 12 Pro")
+        MenuView().previewDevice("iPhone 12 Pro")
     }
 }

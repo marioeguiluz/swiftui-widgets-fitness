@@ -22,4 +22,11 @@ extension View {
             self
         }
     }
+    
+    func cardStyle() -> some View {
+        self
+            .padding()
+            .background(Color("Card"))
+            .cornerRadius(15)
+    }
 }

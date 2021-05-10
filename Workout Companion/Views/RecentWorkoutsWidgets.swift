@@ -12,16 +12,23 @@ struct RecentWorkoutsWidgets: View {
     let workouts: [HKWorkout]
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 15) {
             TitleWorkouts()
-            Text("Your most recent workouts")
+            Text("You did \(workouts.count) workouts in the last 7 days.")
                 .font(Font.body.bold())
                 .foregroundColor(Color.white)
             Divider()
                 .background(Color(UIColor.systemGray2))
-            ThreeRowWorkouts(workouts: Array(workouts.prefix(3)))
+            ScrollView(.horizontal, showsIndicators: true) {
+                HStack(spacing: 20) {
+                    ForEach(workouts.batched(into: 4), id: \.self) { items in
+                        ThreeRowWorkouts(workouts: items)
+                    }
+                }
+            }
         }
         .cardStyle()
+        .frame(maxHeight: Constants.widgetLargeHeight)
     }
 }
 
@@ -33,8 +40,8 @@ struct ThreeRowWorkouts: View {
             ForEach(Array(workouts.enumerated()), id: \.offset) { (offset, element) in
                 WorkoutRowView(workout: WorkoutRowModel(workout: element))
             }
+            Spacer()
         }
-
     }
 }
 

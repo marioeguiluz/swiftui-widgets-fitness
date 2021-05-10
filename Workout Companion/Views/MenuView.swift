@@ -23,12 +23,13 @@ struct MenuView: View {
         .navigationTitle("Widgets")
     }
 
+    @ViewBuilder
     private func destination(for menuItem: MenuModel) -> some View {
         switch menuItem {
         case .workout:
-            return WorkoutWidgets()
+            WorkoutWidgets()
         default:
-            return WorkoutWidgets()
+            WIP()
         }
     }
 }

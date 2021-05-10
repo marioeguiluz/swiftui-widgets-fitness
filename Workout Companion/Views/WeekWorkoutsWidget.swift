@@ -22,6 +22,7 @@ struct WeekWorkoutsWidget: View {
             WeekWorkoutsView(weekWorkoutModel: weekWorkoutModel)
         }
         .cardStyle()
+        .frame(maxHeight: Constants.widgetMediumHeight)
     }
 }
 

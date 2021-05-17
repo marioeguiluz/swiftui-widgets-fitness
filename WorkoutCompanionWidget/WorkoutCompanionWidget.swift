@@ -10,7 +10,7 @@ import SwiftUI
 import Intents
 
 struct Provider: IntentTimelineProvider {
-    let workoutManager = WorkoutManager(weekWorkoutModel: WeekWorkoutModel(workouts: []))
+    let workoutManager = WorkoutManager()
 
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent(), weekWorkoutModel: WeekWorkoutModel.data)
@@ -24,7 +24,7 @@ struct Provider: IntentTimelineProvider {
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         workoutManager.latestWorkoutWeekDays { weekWorkoutModel in
             let entryDate = Date()
-            let refreshDate = Calendar.current.date(byAdding: .day, value: 1, to: entryDate)!
+            let refreshDate = Calendar.current.date(byAdding: .hour, value: 4, to: entryDate)!
             let entry = SimpleEntry(date: entryDate, configuration: configuration, weekWorkoutModel: weekWorkoutModel)
             let timeline = Timeline(entries: [entry], policy: .after(refreshDate))
             completion(timeline)
